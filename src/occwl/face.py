@@ -551,16 +551,14 @@ class Face(Shape, BoundingBoxMixin, TriangulatorMixin, WireContainerMixin, \
                     np.empty(shape=(0,3), dtype=np.int32)
                 )
 
-        vert_nodes = facing.Nodes()
         tri = facing.Triangles()
-        uv_nodes = facing.UVNodes()
         verts = []
         normals = []
         for i in range(1, facing.NbNodes() + 1):
-            vert = vert_nodes.Value(i).Transformed(location.Transformation())
+            vert = facing.Node(i).Transformed(location.Transformation())
             verts.append(np.array(list(vert.Coord())))
             if return_normals:
-                uv = uv_nodes.Value(i).Coord()
+                uv = facing.UVNode(i).Coord()
                 normal = self.normal(uv)
                 normals.append(normal)
 

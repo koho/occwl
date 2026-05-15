@@ -26,10 +26,10 @@ unamestr=$(uname)
 if [ "$unamestr" = 'Linux' ]; then
     if command -v sudo; then
         sudo apt update -y
-        sudo apt install libgl1-mesa-glx -y
+        sudo apt install libgl1 -y
     else
         apt update -y
-        apt install libgl1-mesa-glx -y
+        apt install libgl1 -y
     fi
 fi
 

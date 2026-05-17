@@ -24,7 +24,6 @@ requirements:
     - numpy
     - pyqt >=5
     - wxpython >=4
-    - pyside2 >=5
     - pydeprecate
     - networkx
     - matplotlib
